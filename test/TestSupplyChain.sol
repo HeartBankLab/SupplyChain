@@ -9,23 +9,29 @@ contract TestSupplyChain {
     // Test for failing conditions in this contracts
     // test that every modifier is working
 
-    // buyItem
+    SupplyChain supplyChain;
 
+    function beforeEach() {
+        supplyChain = SupplyChain(DeployedAddresses.SupplyChain());
+    }
+
+    function testOwner() {
+        Assert.equal(supplyChain.owner(), msg.sender, "owner should be set");
+    }
+    
+    // buyItem
     // test for failure if user does not send enough funds
     // test for purchasing an item that is not for Sale
-
+    function testBuyItem() {
+        
+    }
 
     // shipItem
-
     // test for calls that are made by not the seller
     // test for trying to ship an item that is not marked Sold
-
+    
     // receiveItem
-
     // test calling the function from an address that is not the buyer
     // test calling the function on an item not marked Shipped
-
-     
-
 
 }
